@@ -39,3 +39,8 @@ Open the HTTPS demo on a recent desktop version of Chrome or Edge. Pick a model 
 - Tests: `python -m unittest discover -s tests -v` and `npm --prefix web test`.
 
 Models: [NVIDIA Parakeet v3](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3), [sherpa-onnx](https://k2-fsa.github.io/sherpa/onnx/pretrained_models/offline-transducer/nemo-transducer-models.html), [OpenAI Whisper](https://github.com/openai/whisper), [faster-whisper](https://github.com/SYSTRAN/faster-whisper), and [parakeet.js](https://www.npmjs.com/package/parakeet.js). Model packs identify their original releases and conversion sources. The browser's bundled audio example is synthetic speech generated with Flite.
+
+### Model attribution
+
+- **Parakeet TDT 0.6B v3** by NVIDIA is available under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). LiveScribe uses quantized ONNX conversions rather than the original NeMo weights. The [Windows conversion](https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models) is from sherpa-onnx and the [browser conversion](https://huggingface.co/ysdede/parakeet-tdt-0.6b-v3-onnx) is from ysdede.
+- **Whisper** by OpenAI is available under the [MIT License](https://github.com/openai/whisper/blob/main/LICENSE). LiveScribe uses converted CTranslate2 and ONNX weights for local inference.
