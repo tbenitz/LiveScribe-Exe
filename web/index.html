@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Compare local speech recognition models in your browser. No audio upload.">
+<title>LiveScribe — Local transcription lab</title>
+<link rel="icon" href="./wave.svg">
+<script type="module" src="/main.js"></script>
+</head>
+<body>
+<div class="shell">
+<header>
+<a class="brand" href="./"><img src="./wave.svg" alt=""> LiveScribe</a>
+<a class="repo" href="https://github.com/tbenitz/LiveScribe-Exe">GitHub ↗</a>
+</header>
+<main>
+<section class="hero">
+<p class="kicker"><span></span> LOCAL TRANSCRIPTION LAB</p>
+<h1>Talk. See it<br>turn into text.</h1>
+<p class="intro">Test a speech model on your microphone or an audio file. The browser downloads the weights and runs the model on your device.</p>
+<a class="link" href="https://github.com/tbenitz/LiveScribe-Exe/releases">Windows installer & offline model packs ↗</a>
+</section>
+<section class="studio" aria-label="Transcription studio">
+<aside class="settings">
+<p class="eyebrow">01 / SETUP</p><h2>Choose a model</h2>
+<div id="models" class="models"></div>
+<label for="backend" class="field">Processing backend</label>
+<select id="backend"><option value="auto">Auto (recommended)</option><option value="webgpu">WebGPU</option><option value="wasm">CPU / WASM</option></select>
+<p class="help">RAM labels are starting points. On an 8 GB Chromebook, try Tiny or Base first.</p>
+</aside>
+<article class="board">
+<div class="board-top"><div><p class="eyebrow">02 / TRANSCRIPT</p><h2>Live workspace</h2></div><span id="indicator" class="indicator">MIC OFF</span></div>
+<div class="controls">
+<button id="start" class="primary">Start microphone</button><button id="stop" disabled>Stop</button>
+<button id="audio">Open audio</button><input id="file" type="file" accept="audio/*,video/mp4" hidden>
+<button id="sample">Try sample</button>
+</div>
+<p id="status" role="status">Ready. Select a model, then choose an audio source.</p>
+<div id="transcript" class="transcript" aria-label="Transcript"><p id="empty">Your transcript will appear here as speech is recognized.</p><ol id="lines"></ol></div>
+<div class="bottom"><label><input id="visible" type="checkbox" checked> Show live text</label><div><button id="clear" disabled>Clear</button> <button id="save" disabled>Save TXT</button></div></div>
+</article>
+</section>
+</main>
+<footer><span>No audio upload · No API key</span><span>Save TXT before closing the tab.</span></footer>
+</div>
+</body>
+</html>

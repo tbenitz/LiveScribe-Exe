@@ -1,0 +1,6 @@
+faster-whisper==1.2.1
+sherpa-onnx==1.12.40
+sounddevice==0.5.2
+pystray==0.19.5
+Pillow==11.3.0
+numpy==2.2.6
